@@ -4,9 +4,10 @@ import express from 'express';
 import TestControllers from "./controllers/TestControllers";
 import LoggerControllers from "./controllers/LoggerControllers";
 import TimeToolsController from "./controllers/TimeToolsController";
-import RickPaperScissorController from "./controllers/RickPaperScissorController"
+import RickLasererScissorController from "./controllers/RickLaserScissorController"
 import CalculatorController from "./controllers/CalculatorController"
 import TicTocController from "./controllers/TicTocController"
+import TodoController from "./controllers/TodoController"
     
 //middlewares
 import LoggerMiddleware from "./modules/LoggerMiddleware";
@@ -43,10 +44,10 @@ class Main{
         TestControllers.init(this.app)
         LoggerControllers.init(this.app)
         TimeToolsController.init(this.app)
-        RickPaperScissorController.init(this.app)
+        RickLasererScissorController.init(this.app)
         CalculatorController.init(this.app)
         TicTocController.init(this.app)
-
+        TodoController.init(this.app)
     }
 
     private listen(){

@@ -1,7 +1,7 @@
 
-export default class RickPaperScissorController{
+export default class RickLasererScissorController{
 
-    static prePath = "/rickpaperscissor"
+    static prePath = "/ricklaserscissor"
 
     static options = ["rick", "laser", "scissor"]
 
