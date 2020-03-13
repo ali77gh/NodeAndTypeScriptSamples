@@ -1,4 +1,3 @@
-import e = require("express");
 
 export default class RickPaperScissorController{
 
@@ -10,7 +9,7 @@ export default class RickPaperScissorController{
 
         
         app.post(this.prePath + "/:play", (req, res) => {
-            let play = req.param("play")
+            let play = req.params["play"] 
             if (this.options.indexOf(play) == -1) {
                 res.status(404).send(
                     "not valid play\n" +

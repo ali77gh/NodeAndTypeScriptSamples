@@ -5,7 +5,8 @@ import TestControllers from "./controllers/TestControllers";
 import LoggerControllers from "./controllers/LoggerControllers";
 import TimeToolsController from "./controllers/TimeToolsController";
 import RickPaperScissorController from "./controllers/RickPaperScissorController"
-
+import CalculatorController from "./controllers/CalculatorController"
+    
 //middlewares
 import LoggerMiddleware from "./modules/LoggerMiddleware";
 
@@ -42,6 +43,7 @@ class Main{
         LoggerControllers.init(this.app)
         TimeToolsController.init(this.app)
         RickPaperScissorController.init(this.app)
+        CalculatorController.init(this.app)
 
     }
 

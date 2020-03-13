@@ -4,6 +4,6 @@ Node And TypeScript Samples
 
 tic-toc
 todo list
-calculator
+calculator                   done
 rick laser scissors          done
 time tools                   done
