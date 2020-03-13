@@ -5,7 +5,7 @@ export default class LoggerControllers {
 
     static prePath = "/logs"
 
-    static logFileName = "logs.txt"
+    static logFileName = "logs.log"
 
     static init(app) {
 

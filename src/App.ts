@@ -3,6 +3,7 @@ import express from 'express';
 //controllers
 import TestControllers from "./controllers/TestControllers";
 import LoggerControllers from "./controllers/LoggerControllers";
+import TimeToolsController from "./controllers/TimeTools";
 
 //middlewares
 import LoggerMiddleware from "./modules/LoggerMiddleware";
@@ -36,8 +37,9 @@ class Main{
 
     private initRouter(){
 
-        TestControllers.init(this.app);
+        TestControllers.init(this.app)
         LoggerControllers.init(this.app)
+        TimeToolsController.init(this.app)
 
     }
 

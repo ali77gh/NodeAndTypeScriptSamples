@@ -17,7 +17,7 @@ export default class LoggerMiddleware {
                 "\n";
 
             console.log(logText);
-            fs.appendFile('logs.txt', logText, function (err) {
+            fs.appendFile('logs.log', logText, function (err) {
                 if (err) throw err;
                 //console.log(logText);
             });
