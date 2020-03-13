@@ -18,7 +18,7 @@ export default class LoggerControllers {
         app.get(this.prePath + '/clear', (req, res) => {
 
             fs.unlinkSync(this.logFileName)
-            res.send('logs cleared')
+            res.status(200).send('logs cleared')
         });
 
     }

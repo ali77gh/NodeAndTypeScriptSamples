@@ -8,25 +8,25 @@ export default class TimeTools {
     static init(app) {
 
         app.get(this.prePath + '/get', (req, res) => {
-            res.send(new Date().toString())
+            res.status(200).send(new Date().toString())
         });
 
         app.post(this.prePath + '/start', (req, res) => {
 
             this.timerStartTime = new Date()
-            res.send("timer started")
+            res.status(200).send("timer started")
         });
 
         app.post(this.prePath + '/stop', (req, res) => {
             
             this.timerStartTime = null
-            res.send("timer stoped")
+            res.status(200).send("timer stoped")
         });
 
         app.get(this.prePath + '/getTimer', (req, res) => {
             
             if (this.timerStartTime == null)
-                res.send("timer is not started")
+                res.status(400).send("timer is not started")
             else {
 
                 let diff = new Date().getTime() - this.timerStartTime.getTime() // ms
@@ -34,7 +34,7 @@ export default class TimeTools {
 
                 let diffStr = Math.floor(diff / 60) + ":" + Math.floor(diff%60)
 
-                res.send(diffStr)
+                res.status(200).send(diffStr)
              }
 
                 

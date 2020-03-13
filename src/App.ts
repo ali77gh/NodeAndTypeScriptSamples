@@ -3,7 +3,8 @@ import express from 'express';
 //controllers
 import TestControllers from "./controllers/TestControllers";
 import LoggerControllers from "./controllers/LoggerControllers";
-import TimeToolsController from "./controllers/TimeTools";
+import TimeToolsController from "./controllers/TimeToolsController";
+import RickPaperScissorController from "./controllers/RickPaperScissorController"
 
 //middlewares
 import LoggerMiddleware from "./modules/LoggerMiddleware";
@@ -24,7 +25,7 @@ class Main{
         this.initMiddlewares()
 
         //apis
-        this.initRouter()
+        this.initControllers()
 
         this.listen()
     }
@@ -35,11 +36,12 @@ class Main{
         
     }
 
-    private initRouter(){
+    private initControllers(){
 
         TestControllers.init(this.app)
         LoggerControllers.init(this.app)
         TimeToolsController.init(this.app)
+        RickPaperScissorController.init(this.app)
 
     }
 
