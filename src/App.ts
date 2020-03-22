@@ -1,4 +1,5 @@
 import express from 'express';
+import bodyParser from 'body-parser';
 
 //controllers
 import TestControllers from "./controllers/TestControllers";
@@ -36,6 +37,7 @@ class Main{
     private initMiddlewares() {
         
         LoggerMiddleware.init(this.app);
+        this.app.use(bodyParser.json())
         
     }
 

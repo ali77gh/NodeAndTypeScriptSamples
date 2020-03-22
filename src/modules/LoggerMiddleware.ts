@@ -16,7 +16,7 @@ export default class LoggerMiddleware {
                 " counter : " + LoggerMiddleware.counter +
                 "\n";
 
-            //console.log(logText);
+            
             fs.appendFile('logs.log', logText, function (err) {
                 if (err) throw err;
                 //console.log(logText);

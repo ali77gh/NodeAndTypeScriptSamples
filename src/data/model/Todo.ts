@@ -5,7 +5,7 @@ export default class Todo{
     private _id :string
     private _name : string
     private _description : string
-    private _done: boolean
+    private _done: number // sqlite not supporting 
 
     static getInstance(name: string, description: string) :Todo {
         
@@ -13,7 +13,7 @@ export default class Todo{
         todo._id = this.genRandID()
         todo._name = name;
         todo._description = description;   
-        todo._done = false
+        todo._done = 0
 
         return todo;
     }
@@ -24,7 +24,7 @@ export default class Todo{
         todo._id = id
         todo._name = name;
         todo._description = description;
-        todo._done = done
+        todo._done = done ? 1 : 0; 
 
         return todo;
         
@@ -60,11 +60,14 @@ export default class Todo{
     }
 
     get done() {
+        return (this._done==1)
+    }
+    get doneAsNum() {
         return this._done
     }
 
     set done(done: boolean) {
-        this._done = done
+        this._done = done ? 1 : 0;
     }
 
     static genRandID() : string {
